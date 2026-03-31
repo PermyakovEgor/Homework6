@@ -1,4 +1,4 @@
-package homework4;
+package homework4_1;
 
 class CaseBankomat {
     public static void main(String[] args) {

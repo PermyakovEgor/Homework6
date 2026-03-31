@@ -1,4 +1,4 @@
-package homework4;
+package homework4_1;
 
 class CaseCard {
     public static void main(String[] args) {

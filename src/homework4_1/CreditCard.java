@@ -1,6 +1,5 @@
-package homework4;
+package homework4_1;
 
-import java.util.Random;
 import java.util.Scanner;
 
 public class CreditCard {
