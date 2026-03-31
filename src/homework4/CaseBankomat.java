@@ -5,7 +5,7 @@ class CaseBankomat {
         Bankomat atm = new Bankomat();
 
         System.out.println("Инициализация банкомата:");
-        atm.ATM();
+        atm.atm();
 
         //метод выводящий кол-во купюр всех номиналов
         atm.printStatus();
@@ -18,7 +18,7 @@ class CaseBankomat {
         atm.printStatus();
 
         System.out.println("=== Операция снятия ===");
-        atm.cashout();
+        atm.cashout(5000);
         atm.printStatus();
     }
 }

@@ -10,7 +10,7 @@ public class Bankomat {
     Scanner scanner = new Scanner(System.in);
 
     //Инициализации кол-ва купюр
-    public void ATM() {
+    public void atm() {
         for (int i = 0; i < count.length; i++) {
             count[i] = random.nextInt(1001);
             System.out.println(count[i] + "купюр данного номинала");
@@ -55,14 +55,13 @@ public class Bankomat {
     }
 
     // Снятие денег с учётом доступных номиналов
-    public void cashout() {
+    public void cashout(int amount) {
         System.out.println("Доступные номиналы и их количество:");
         for (int i = 0; i < nominal.length; i++) {
             System.out.println(nominal[i] + " руб. — " + count[i] + " шт.");
         }
 
         System.out.println("Введите сумму для снятия:");
-        int amount = scanner.nextInt();
         int remaining = amount;
 
         // Пытаемся снять деньги, начиная с наибольшего номинала
