@@ -7,10 +7,10 @@ class Clinic {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
-        Patient patient = new Patient(); // Создаём объект класса Patient
+        Patient patient = new Patient("Терапевт", 5, "Егор", "Плана пока нет"); // Создаём объект класса Patient
         //Выводим имя и текущее здоровье
-        System.out.println("Здоровье пациента " + patient.name  + " на данный момент: " + patient.health);
         int visit = 0;
+        System.out.println("Здоровье пациента " + patient.getName()  + " на данный момент: " + patient.getHealth());
 
         while (true) {
             //Если пациент только пришел
@@ -20,7 +20,7 @@ class Clinic {
             }
             else {
                 //Если пациент уже прошел лечение, есть выбор идти еще лечиться или на выход
-                System.out.println("Вас вылечил " + patient.myDoctor + " еще что-то беспокоит? (Нажать: 1 - нет, иначе - да)");
+                System.out.println("Вас вылечил " + patient.getMyDoctor() + " еще что-то беспокоит? (Нажать: 1 - нет, иначе - да)");
                 int choice2 = scanner.nextInt();
                 if (choice2 == 1) {
                     System.out.println("Нет доктор, я пойду, спасибо");
@@ -30,20 +30,17 @@ class Clinic {
                     System.out.println("Да, знаете, у меня есть еще проблема");
                 }
             }
-            int healHP = 0;
 
-            Duntist duntist = new Duntist();
-            Hirurg hirurg = new Hirurg();
-            Terapevt terapevt = new Terapevt();
+            Therapist terapevt = new Therapist();
 
             terapevt.direction(patient);
 
             //План лечения не супер подробный, но к цели приведет
-            System.out.println("Ваш план лечения был следующий: " + patient.treatmentPlan);
+            System.out.println("Ваш план лечения был следующий: " + patient.getTreatmentPlan());
 
             //Увеличение здоровья после лечения и вывод состояния пациента
-            patient.health += terapevt.healHP;
-            System.out.println("Здоровье пациента " + patient.name + " после лечения: " + patient.health);
+            patient.setHealth(patient.getHealth()  + terapevt.healHP);
+            System.out.println("Здоровье пациента " + patient.getName() + " после лечения: " + patient.getHealth());
         }
     }
 }

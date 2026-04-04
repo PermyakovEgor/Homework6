@@ -8,8 +8,8 @@ public class Duntist extends Doctor {
 
         System.out.println("Выберите действие: 1 — брекеты (+5 здоровья), 2 — удаление зуба мудрости (+25 здоровья)");
         Scanner scanner = new Scanner(System.in);
-        int choice = scanner.nextInt();
         while (true) {
+            int choice = scanner.nextInt();
             if (choice == 1) {
                 healHP += 5;
                 System.out.println("Здоровье после установки брекетов прибавилось на: " + healHP);
