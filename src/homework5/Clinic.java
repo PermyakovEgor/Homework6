@@ -31,9 +31,14 @@ class Clinic {
                 }
             }
 
+            // Ввод проблемы пациента — происходит в Clinic
+            System.out.println("Какая у вас проблема? (1 — болит спина, 2 — болит зуб, иначе — другая проблема)");
+            int problem = scanner.nextInt();
+
+            // Передаём проблему врачу
             Therapist terapevt = new Therapist();
 
-            terapevt.direction(patient);
+            terapevt.direction(patient, problem);
 
             //План лечения не супер подробный, но к цели приведет
             System.out.println("Ваш план лечения был следующий: " + patient.getTreatmentPlan());

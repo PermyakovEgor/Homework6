@@ -30,11 +30,9 @@ public class Patient {
 
 
 
-    public int planHealth() {
-        Scanner scanner = new Scanner(System.in);
+    public int chooseDoctor(int problem) {
+
         int needDoctor = 0;
-        System.out.println("Доктор, моя проблема. (Нажать: 1 - болит спина, 2 - болит зуб, иначе - попытаться объяснить)");
-        int problem = scanner.nextInt();
 
         if (problem == 1) {
             needDoctor++;

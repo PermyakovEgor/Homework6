@@ -30,33 +30,37 @@ public class Therapist extends Doctor {
     }
 
     //метод назначения врача
-    public int direction(Patient patient) { //direction для определения доктора и плана лечения в основном классе
+    public int direction(Patient patient, int problem) { //direction для определения доктора и плана лечения в основном классе
 
         Surgeon hirurg = new Surgeon();
         Duntist duntist = new Duntist();
 
-        int needDoctor = patient.planHealth(); //В зависимости от жалоб подбирает врача
+        int needDoctor = patient.chooseDoctor(problem); //В зависимости от жалоб подбирает врача
 
 
         //Терапевт советует к кому обратиться, назначает врача и план лечения
-        if (needDoctor == 1) {
+        switch (problem) {
+            case 1:
             System.out.println("Я как терапевт, могу посоветовать обратиться к хирургу");
             patient.setMyDoctor("Хирург");
             System.out.println("Ваш лечащий врач: " + patient.getMyDoctor());
             healHP = hirurg.healsPlan();
             patient.setTreatmentPlan("Операция на спину, обратиться к хирургу второй кабинет");
-        } else if (needDoctor == 2) {
+                break;
+            case 2:
             System.out.println("Я как терапевт, могу посоветовать обратиться к стоматологу");
             patient.setMyDoctor("Дантист");
             System.out.println("Ваш лечащий врач: " + patient.getMyDoctor());
             healHP = duntist.healsPlan();
             patient.setTreatmentPlan("Лечение зуба, обратиться к стоматологу третий кабинет");
-        } else if (needDoctor == 3) {
+                break;
+            default:
             System.out.println("Я как терапевт могу сказать, что проблема по моей части, приступим к лечению");
             patient.setMyDoctor("Терапевт");
             System.out.println("Ваш лечащий врач: " + patient.getMyDoctor());
             patient.setTreatmentPlan("Причина явно не касается стоматолога и хирурга, обратиться к терапевту");
             healHP = healsPlan();
+                break;
         }
         return needDoctor;
     }
