@@ -11,7 +11,7 @@ public class Circle implements Figure {
 
     @Override
     public double calculateArea() {
-        double circleArea = ((pi * (radius * radius)) * 100)/100;
+        double circleArea = pi * (radius * radius);
         System.out.println("Площадь круга: " + circleArea);
         return circleArea;
     }

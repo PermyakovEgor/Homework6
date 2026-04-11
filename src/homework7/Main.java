@@ -18,7 +18,7 @@ public class Main {
         System.out.println("Сумма периметров всех фигур: " + sumOfPerimeters);
 
         for (Figure figure : figures) {
-            double area = figure.calculateArea();
+            figure.calculateArea();
         }
     }
 }

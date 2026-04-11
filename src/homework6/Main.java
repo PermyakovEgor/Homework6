@@ -24,7 +24,7 @@ public class Main {
     public static void error1() {
         Scanner scanner = new Scanner(System.in);
         try {
-            int c = 5 / 2;
+            int c = 5 / 0;
             System.out.println("Ввести любимое блюдо: ");
             int eat = scanner.nextInt();
             System.out.println("Ваше любимое блюдо: " + eat);
